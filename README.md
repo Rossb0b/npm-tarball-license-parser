@@ -20,11 +20,36 @@ $ yarn add ntlp
 const parseLicense = require("ntlp");
 
 async function main() {
-    const license = parseLicense(__dirname);
+    const result = await parseLicense(__dirname);
     console.log(license);
 }
 main().catch(console.error);
 ```
+
+Return the following interface
+```ts
+interface license {
+    uniqueLicenseIds: string[],
+    spdxLicenseLinks: string[],
+    spdx: {
+        osi: boolean;
+        fsf: boolean;
+        fsfAndOsi: boolean;
+        includesDeprecated: boolean;
+    },
+    from: string;
+}
+
+interface result {
+    licenses: license[],
+    uniqueLicenseIds: Set<string>;
+}
+```
+
+## API
+
+### parseLicense(dest: string): Promise< ntlp.result >
+parse a given tarball directory and return a result interface.
 
 ## License
 MIT

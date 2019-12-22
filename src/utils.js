@@ -15,13 +15,7 @@ const kLicenses = new Map([
     ["DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE", "WTF"]
 ]);
 
-/**
- * @function parsePackageLicense
- * @param {any} file
- * @returns {string}
- *
- * @see code from https://github.com/cutenode/liblice/blob/master/lib/parseLicense.js
- */
+// code from https://github.com/cutenode/liblice/blob/master/lib/parseLicense.js
 function parsePackageLicense(file) {
     if (file.license !== undefined) {
         if (typeof file.license === "string") {
@@ -46,12 +40,6 @@ function parsePackageLicense(file) {
     return handleUndefinedAndNull(undefined);
 }
 
-/**
- * @function getLicenseFromString
- * @memberof Utils#
- * @param {!string} str license file content
- * @returns {string}
- */
 function getLicenseFromString(str) {
     for (const [name, licenseName] of kLicenses.entries()) {
         if (str.indexOf(name) > -1) {
@@ -62,11 +50,6 @@ function getLicenseFromString(str) {
     return "unknown license";
 }
 
-/**
- * @function handleUndefinedAndNull
- * @param {!string} licenseString
- * @returns {string}
- */
 function handleUndefinedAndNull(licenseString) {
     if (licenseString === undefined) {
         return "invalid license";

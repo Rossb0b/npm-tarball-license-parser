@@ -1,24 +1,24 @@
-/// <reference types="conformance" />
-
-declare namespace LiParser {
+declare namespace ntlp {
     interface license {
-        license: {
-            uniqueLicenseIds: string[],
-            spdxLicenseLinks: string[],
-            spdx: {
-                osi: boolean;
-                fsf: boolean;
-                fsfAndOsi: boolean;
-                includesDeprecated: boolean;
-            }
+        uniqueLicenseIds: string[],
+        spdxLicenseLinks: string[],
+        spdx: {
+            osi: boolean;
+            fsf: boolean;
+            fsfAndOsi: boolean;
+            includesDeprecated: boolean;
         },
         from: string;
-        licenseFiles: string[];
     }
 
-    declare function parseLicense(dest: string, forceOnFiles?: boolean): Promise<license>;
+    interface result {
+        licenses: license[],
+        uniqueLicenseIds: Set<string>;
+    }
+
 }
 
+declare function ntlp(tarballDir: string): Promise<ntlp.result>;
 
-export = LiParser;
-export as namespace LiParser;
+export = ntlp;
+export as namespace ntlp;

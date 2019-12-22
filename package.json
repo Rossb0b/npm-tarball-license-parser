@@ -13,9 +13,6 @@
   "keywords": [],
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "jest": {
-    "collectCoverageFrom": [
-      "**/src/**/*.js"
-    ],
     "testEnvironment": "node",
     "testMatch": [
       "**/test/**/*.js"
