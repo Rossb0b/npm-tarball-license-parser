@@ -12,6 +12,10 @@
   },
   "keywords": [],
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
+  "files": [
+      "index.d.ts",
+      "src"
+  ],
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
