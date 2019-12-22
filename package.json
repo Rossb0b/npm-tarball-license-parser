@@ -1,7 +1,7 @@
 {
-  "name": "liparser",
+  "name": "ntlp",
   "version": "1.0.0",
-  "description": "license parser",
+  "description": "npm tarball license parser and conformance checker",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
