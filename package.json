@@ -10,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/fraxken/liparser.git"
   },
-  "keywords": [],
+  "keywords": [
+      "license",
+      "licenses",
+      "tarball",
+      "npm",
+      "analyzer",
+      "parser",
+      "compliance",
+      "check"
+  ],
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "files": [
       "index.d.ts",
