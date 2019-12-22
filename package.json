@@ -1,0 +1,40 @@
+{
+  "name": "liparser",
+  "version": "1.0.0",
+  "description": "license parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraxken/liparser.git"
+  },
+  "keywords": [],
+  "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/test/**/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/test/fixtures/"
+    ]
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fraxken/liparser/issues"
+  },
+  "homepage": "https://github.com/fraxken/liparser#readme",
+  "dependencies": {
+    "conformance": "^1.0.0"
+  },
+  "devDependencies": {
+    "@slimio/eslint-config": "^4.0.0",
+    "jest": "^24.9.0"
+  }
+}
