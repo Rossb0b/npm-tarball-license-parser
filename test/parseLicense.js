@@ -11,6 +11,6 @@ const FIXTURE_PATH = join(__dirname, "fixtures");
 
 test("parseLicense of project1", async() => {
     const result = await parseLicense(join(FIXTURE_PATH, "project1"));
-    expect(result.uniqueLicenseIds).toEqual(new Set(["ISC", "MIT"]));
+    expect(result.uniqueLicenseIds).toEqual(["ISC", "MIT"]);
     expect(result).toMatchSnapshot();
 });

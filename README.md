@@ -29,8 +29,8 @@ main().catch(console.error);
 Return the following interface
 ```ts
 interface license {
-    uniqueLicenseIds: string[],
-    spdxLicenseLinks: string[],
+    uniqueLicenseIds: string[];
+    spdxLicenseLinks: string[];
     spdx: {
         osi: boolean;
         fsf: boolean;
@@ -41,7 +41,7 @@ interface license {
 }
 
 interface result {
-    licenses: license[],
+    licenses: license[];
     uniqueLicenseIds: Set<string>;
 }
 ```

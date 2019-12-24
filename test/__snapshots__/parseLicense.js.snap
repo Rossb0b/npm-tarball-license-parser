@@ -2,6 +2,7 @@
 
 exports[`parseLicense of project1 1`] = `
 Object {
+  "hasMultipleLicenses": true,
   "licenses": Array [
     Object {
       "from": "package.json",
@@ -34,9 +35,9 @@ Object {
       ],
     },
   ],
-  "uniqueLicenseIds": Set {
+  "uniqueLicenseIds": Array [
     "ISC",
     "MIT",
-  },
+  ],
 }
 `;

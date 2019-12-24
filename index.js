@@ -16,6 +16,7 @@ async function parseLicense(dest) {
     }
     const licenses = [];
     const uniqueLicenseIds = [];
+    let hasMultipleLicenses = false;
 
     try {
         const packageStr = await readFile(join(dest, "package.json"), "utf-8");
@@ -40,14 +41,20 @@ async function parseLicense(dest) {
         const licenseName = getLicenseFromString(str);
         if (licenseName !== "unknown license") {
             const license = conformance(licenseName);
-            uniqueLicenseIds.push(...license.uniqueLicenseIds);
+            for (const localLicenseName of license.uniqueLicenseIds) {
+                if (!uniqueLicenseIds.includes(localLicenseName)) {
+                    hasMultipleLicenses = true;
+                }
+                uniqueLicenseIds.push(localLicenseName);
+            }
             license.from = file;
             licenses.push(license);
         }
     }
 
     return {
-        uniqueLicenseIds: new Set(uniqueLicenseIds),
+        uniqueLicenseIds: [...new Set(uniqueLicenseIds)],
+        hasMultipleLicenses,
         licenses
     };
 }
