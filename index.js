@@ -18,18 +18,12 @@ async function parseLicense(dest) {
     const uniqueLicenseIds = [];
     let hasMultipleLicenses = false;
 
-    try {
-        const packageStr = await readFile(join(dest, "package.json"), "utf-8");
-        const detectedName = parsePackageLicense(JSON.parse(packageStr));
-        const license = conformance(detectedName);
-        uniqueLicenseIds.push(...license.uniqueLicenseIds);
-        license.from = "package.json";
-
-        licenses.push(license);
-    }
-    catch (err) {
-        // Ignore
-    }
+    const packageStr = await readFile(join(dest, "package.json"), "utf-8");
+    const detectedName = parsePackageLicense(JSON.parse(packageStr));
+    const license = conformance(detectedName);
+    uniqueLicenseIds.push(...license.uniqueLicenseIds);
+    license.from = "package.json";
+    licenses.push(license);
 
     const licenseFiles = (await readdir(dest, { withFileTypes: true }))
         .filter((dirent) => dirent.isFile())
