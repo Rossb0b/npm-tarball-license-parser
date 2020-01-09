@@ -1,6 +1,6 @@
 {
   "name": "ntlp",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "npm tarball license parser and conformance checker",
   "main": "index.js",
   "scripts": {
