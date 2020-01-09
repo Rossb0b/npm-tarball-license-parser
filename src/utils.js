@@ -2,17 +2,18 @@
 
 // CONSTANTS
 const kLicenses = new Map([
-    ["MIT", "MIT"],
-    ["BSD", "BSD"],
+    ["BSD 3-Clause", "BSD 3-Clause"],
+    ["BSD ", "BSD"],
     ["ISC ", "ISC"],
     ["Apache License", "Apache"],
     ["Mozilla", "Mozilla"],
-    ["LGPL", "LGPL"],
-    ["Affero", "GPL"],
-    ["GPL", "GPL"],
+    ["LGPL ", "LGPL"],
+    ["Affero ", "GPL"],
+    ["GPL ", "GPL"],
     ["Eclipse", "Eclipse"],
     ["Artistic", "Artistic"],
-    ["DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE", "WTF"]
+    ["DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE", "WTF"],
+    ["MIT ", "MIT"]
 ]);
 
 // code from https://github.com/cutenode/liblice/blob/master/lib/parseLicense.js
