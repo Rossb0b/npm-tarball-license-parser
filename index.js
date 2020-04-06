@@ -35,14 +35,18 @@ async function parseLicense(dest) {
         const licenseName = getLicenseFromString(str);
         if (licenseName !== "unknown license") {
             const license = conformance(licenseName);
+            if (Reflect.has(license, "error")) {
+                continue;
+            }
+            license.from = file;
+            licenses.push(license);
+
             for (const localLicenseName of license.uniqueLicenseIds) {
                 if (!uniqueLicenseIds.includes(localLicenseName)) {
                     hasMultipleLicenses = true;
                 }
                 uniqueLicenseIds.push(localLicenseName);
             }
-            license.from = file;
-            licenses.push(license);
         }
     }
 

@@ -1,8 +1,8 @@
 declare namespace ntlp {
     interface license {
         uniqueLicenseIds: string[];
-        spdxLicenseLinks: string[];
-        spdx: {
+        spdxLicenseLinks?: string[];
+        spdx?: {
             osi: boolean;
             fsf: boolean;
             fsfAndOsi: boolean;
