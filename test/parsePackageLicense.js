@@ -1,45 +1,50 @@
-"use strict";
+import test from "tape";
 
 // Require Internal Dependencies
-const { parsePackageLicense } = require("../src/utils");
+import { parsePackageLicense } from "../src/utils.js";
 
-test("should return 'MIT' for parsePackageLicense license MIT", () => {
-    const result = parsePackageLicense({
-        license: "MIT"
-    });
-    expect(result).toStrictEqual("MIT");
+test("should return 'MIT' for parsePackageLicense license MIT", (tape) => {
+  const result = parsePackageLicense({
+    license: "MIT"
+  });
+  tape.strictEqual(result, "MIT");
+  tape.end();
 });
 
-test("should return 'MIT AND (CC0-1.0 OR ISC)' for parsePackageLicense of Object", () => {
-    const result = parsePackageLicense({
-        license: {
-            type: "MIT AND (CC0-1.0 OR ISC)"
-        }
-    });
-    expect(result).toStrictEqual("MIT AND (CC0-1.0 OR ISC)");
+test("should return 'MIT AND (CC0-1.0 OR ISC)' for parsePackageLicense of Object", (tape) => {
+  const result = parsePackageLicense({
+    license: {
+      type: "MIT AND (CC0-1.0 OR ISC)"
+    }
+  });
+  tape.strictEqual(result, "MIT AND (CC0-1.0 OR ISC)");
+  tape.end();
 });
 
-test("parsePackageLicense of payload with licenses property", () => {
-    const result = parsePackageLicense({
-        licenses: {
-            type: "MIT AND (CC0-1.0 OR ISC)"
-        }
-    });
-    expect(result).toStrictEqual("MIT AND (CC0-1.0 OR ISC)");
+test("parsePackageLicense of payload with licenses property", (tape) => {
+  const result = parsePackageLicense({
+    licenses: {
+      type: "MIT AND (CC0-1.0 OR ISC)"
+    }
+  });
+  tape.strictEqual(result, "MIT AND (CC0-1.0 OR ISC)");
+  tape.end();
 });
 
-test("parsePackageLicense of payload with licenses property as Array", () => {
-    const result = parsePackageLicense({
-        licenses: [
-            {
-                type: "ISC"
-            }
-        ]
-    });
-    expect(result).toStrictEqual("ISC");
+test("parsePackageLicense of payload with licenses property as Array", (tape) => {
+  const result = parsePackageLicense({
+    licenses: [
+      {
+        type: "ISC"
+      }
+    ]
+  });
+  tape.strictEqual(result, "ISC");
+  tape.end();
 });
 
-test("parsePackageLicense with empty payload", () => {
-    const result = parsePackageLicense({});
-    expect(result).toStrictEqual("invalid license");
+test("parsePackageLicense with empty payload", (tape) => {
+  const result = parsePackageLicense({});
+  tape.strictEqual(result, "invalid license");
+  tape.end();
 });

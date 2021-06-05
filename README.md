@@ -17,10 +17,10 @@ $ yarn add ntlp
 ## Usage example
 
 ```js
-const parseLicense = require("ntlp");
+import parseLicense from "@nodesource/ntlp";
 
 async function main() {
-    const result = await parseLicense(__dirname);
+    const license = await parseLicense(__dirname);
     console.log(license);
 }
 main().catch(console.error);

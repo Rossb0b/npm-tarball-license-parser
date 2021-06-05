@@ -1,14 +1,16 @@
 {
-  "name": "ntlp",
-  "version": "1.1.3",
+  "name": "@nodesecure/ntlp",
+  "version": "1.2.0",
   "description": "npm tarball license parser and conformance checker",
-  "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "cross-env esm-tape-runner 'test/**/*.js' | tap-monkey",
+    "lint": "cross-env eslint index.js",
+    "check": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fraxken/liparser.git"
+    "url": "git+https://github.com/NodeSecure/liparser.git"
   },
   "keywords": [
       "license",
@@ -25,26 +27,20 @@
       "index.d.ts",
       "src"
   ],
-  "jest": {
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/test/**/*.js"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/test/fixtures/"
-    ]
-  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fraxken/liparser/issues"
+    "url": "https://github.com/NodeSecure/liparser/issues"
   },
-  "homepage": "https://github.com/fraxken/liparser#readme",
+  "homepage": "https://github.com/NodeSecure/liparser#readme",
   "dependencies": {
     "conformance": "^1.0.0"
   },
   "devDependencies": {
-    "@slimio/eslint-config": "^4.0.0",
-    "jest": "^24.9.0"
-  }
+    "@nodesecure/eslint-config": "^1.0.0",
+    "@small-tech/esm-tape-runner": "^1.0.3",
+    "@small-tech/tap-monkey": "^1.3.0",
+    "cross-env": "^7.0.3",
+    "tape": "^5.2.2"
+  },
+  "type": "module"
 }
