@@ -2,22 +2,22 @@
 license parser
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v12 or higher
+- [Node.js](https://nodejs.org/en/) v14 or higher
 
 ## Getting Started
 
 This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
 
 ```bash
-$ npm i ntlp
+$ npm i @nodesecure/ntlp
 # or
-$ yarn add ntlp
+$ yarn add @nodesecure/ntlp
 ```
 
 ## Usage example
 
 ```js
-import parseLicense from "@nodesource/ntlp";
+import parseLicense from "@nodesecure/ntlp";
 
 async function main() {
     const license = await parseLicense(__dirname);
