@@ -1,6 +1,6 @@
 {
   "name": "@nodesecure/ntlp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "npm tarball license parser and conformance checker",
   "exports": "./index.js",
   "scripts": {
